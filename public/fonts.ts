@@ -5,7 +5,7 @@ export const makkikiAccent = localFont({
   src: [
     {
       path: '../fonts/Makkiki-Accent.ttf',
-      style: 'normal',
+      style: 'latin',
       weight: '400'
     }
   ],
