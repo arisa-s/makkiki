@@ -5,7 +5,49 @@ const config: Config = {
   content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      colors: {
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        'brand-primary': 'var(--brand-primary)',
+        'brand-secondary': 'var(--brand-secondary)',
+
+        /* Neutral colors */
+        'neutral-0': 'var(--neutral-0)',
+        'neutral-50': 'var(--neutral-50)',
+        'neutral-100': 'var(--neutral-100)',
+        'neutral-200': 'var(--neutral-200)',
+        'neutral-300': 'var(--neutral-300)',
+        'neutral-400': 'var(--neutral-400)',
+        'neutral-500': 'var(--neutral-500)',
+        'neutral-600': 'var(--neutral-600)',
+        'neutral-700': 'var(--neutral-700)',
+        'neutral-800': 'var(--neutral-800)',
+        'neutral-900': 'var(--neutral-900)',
+
+        /* Text colors */
+        primary: 'var(--text-primary)',
+        secondary: 'var(--text-secondary)',
+        ternary: 'var(--text-ternary)',
+        invert: 'var(--text-invert)',
+        error: 'var(--text-error)'
+      },
+      backgroundColor: {
+        /* Surface colors */
+        primary: 'var(--surface-primary)',
+        secondary: 'var(--surface-secondary)',
+        component: 'var(--surface-component)',
+        'component-secondary': 'var(--surface-component-secondary)',
+        'component-hover': 'var(--surface-component-hover)',
+        hover: 'var(--surface-hover)'
+      },
+      borderColor: {
+        DEFAULT: 'var(--border-primary)',
+        primary: 'var(--border-primary)'
+      },
       fontFamily: {
+        accent: ['var(--font-accent)'],
+        base: ['var(--font-base)'],
+        brand: ['var(--font-brand)'],
         sans: ['var(--font-geist-sans)']
       },
       keyframes: {

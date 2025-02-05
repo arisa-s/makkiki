@@ -5,6 +5,7 @@ import { GeistSans } from 'geist/font/sans';
 import { getCart } from 'lib/shopify';
 import { ensureStartsWith } from 'lib/utils';
 import { cookies } from 'next/headers';
+import { makkikiAccent, mPlusRounded1c } from 'public/fonts';
 import { ReactNode } from 'react';
 import { Toaster } from 'sonner';
 import './globals.css';
@@ -42,8 +43,8 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const cart = getCart(cartId);
 
   return (
-    <html lang="en" className={GeistSans.variable}>
-      <body className="bg-neutral-50 text-black selection:bg-teal-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
+    <html lang="en" className={`${GeistSans.variable} ${mPlusRounded1c} ${makkikiAccent}`}>
+      <body className="text-primary bg-neutral-50 selection:bg-teal-300">
         <CartProvider cartPromise={cart}>
           <Navbar />
           <main>

@@ -2,20 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Light theme colors */
+:root {
+  --background: #fcfdfc;
+  --foreground: #0C5156;
+  --brand-primary: #6EC7CB;
+  --brand-secondary: #FEF163;
+
+  /* Neutral colors */
+  --neutral-0: #fcfdfc;
+  --neutral-50: #f8faf8;
+  --neutral-100: #f2f4f2;
+  --neutral-200: #e6ebea;
+  --neutral-300: #d0d9d8;
+  --neutral-400: #b8c6c5;
+  --neutral-500: #95a7a6;
+  --neutral-600: #718889;
+  --neutral-700: #5b7273;
+  --neutral-800: #3e6365;
+  --neutral-900: #0C5156;
+
+
+  /* Text colors */
+  --text-primary: var(--neutral-900);
+  --text-secondary: var(--neutral-800);
+  --text-ternary: var(--neutral-500);
+  --text-invert: var(--neutral-100);
+  --text-accent: var(--brand-primary);
+  --text-error: #BF1F25;
+
+  /* Surface colors */
+  --surface-primary: var(--neutral-0);
+  --surface-secondary: var(--neutral-100);
+  --surface-component: var(--neutral-900);
+  --surface-component-secondary: var(--neutral-100);
+  --surface-component-hover: var(--neutral-800);
+  --surface-hover: var(--neutral-200);
+  --surface-accent: var(--brand-secondary);
+
+  /* Border colors */
+  --border-primary: var(--neutral-300);
 }
 
-@supports (font: -apple-system-body) and (-webkit-appearance: none) {
-  img[loading='lazy'] {
-    clip-path: inset(0.6px);
-  }
-}
-
-a,
-input,
-button {
-  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-50 dark:focus-visible:ring-neutral-600 dark:focus-visible:ring-offset-neutral-900;
+body {
+  color: var(--text-primary);
+  background: var(--background);
+  font-family: var(--font-base);
+  border-color: var(--border-primary);
 }
