@@ -15,5 +15,5 @@ export const makkikiAccent = localFont({
 export const mPlusRounded1c = M_PLUS_Rounded_1c({
   variable: '--font-base',
   weight: ['100', '300', '400', '500', '700', '800', '900'],
-  style: 'normal'
+  subsets: ['latin']
 });
