@@ -37,6 +37,7 @@ const config: Config = {
         secondary: 'var(--surface-secondary)',
         component: 'var(--surface-component)',
         'component-secondary': 'var(--surface-component-secondary)',
+        'component-secondary-hover': 'var(--surface-component-secondary)',
         'component-hover': 'var(--surface-component-hover)',
         hover: 'var(--surface-hover)'
       },
@@ -48,7 +49,7 @@ const config: Config = {
         accent: ['var(--font-accent)'],
         base: ['var(--font-base)'],
         brand: ['var(--font-brand)'],
-        sans: ['var(--font-geist-sans)']
+        'accent-secondary': ['var(--font-accent-secondary)']
       },
       keyframes: {
         fadeIn: {

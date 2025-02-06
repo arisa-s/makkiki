@@ -16,7 +16,7 @@ export default function Search() {
         placeholder="何かお探しですか？"
         autoComplete="off"
         defaultValue={searchParams?.get('q') || ''}
-        className="text-md bg-primary text-primary w-full rounded-lg border px-4 py-2 placeholder:text-neutral-500 md:text-sm"
+        className="text-md w-full rounded-lg border bg-primary px-4 py-2 text-primary placeholder:text-neutral-500 md:text-sm"
       />
       <div className="absolute right-0 top-0 mr-3 flex h-full items-center">
         <MagnifyingGlassIcon className="h-4" />
@@ -30,7 +30,7 @@ export function SearchSkeleton() {
     <form className="w-max-[550px] relative w-full lg:w-80 xl:w-full">
       <input
         placeholder="何かお探しですか？"
-        className="text-primary w-full rounded-lg border bg-white px-4 py-2 text-sm placeholder:text-neutral-500"
+        className="w-full rounded-lg border bg-white px-4 py-2 text-sm text-primary placeholder:text-neutral-500"
       />
       <div className="absolute right-0 top-0 mr-3 flex h-full items-center">
         <MagnifyingGlassIcon className="h-4" />

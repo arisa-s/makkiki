@@ -1,5 +1,6 @@
-import { Carousel } from 'components/carousel';
-import { ThreeItemGrid } from 'components/grid/three-items';
+import CategoriesSection from 'components/homepage/categories-section';
+import HomepageHero from 'components/homepage/homepage-hero';
+import { Reccomendations } from 'components/homepage/recommendations';
 import Footer from 'components/layout/footer';
 
 export const metadata = {
@@ -12,8 +13,10 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
-      <ThreeItemGrid />
-      <Carousel />
+      <HomepageHero />
+      {/* <NewsBanner text="新着：イタリアのお洒落おばあちゃんのマストアイテムであるグラスホルダー、多数入荷しました！" /> */}
+      <Reccomendations />
+      <CategoriesSection />
       <Footer />
     </>
   );

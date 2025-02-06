@@ -16,13 +16,13 @@ function SubmitButton({
   selectedVariantId: string | undefined;
 }) {
   const buttonClasses =
-    'relative flex w-full items-center justify-center rounded-full bg-blue-600 p-4 tracking-wide text-white';
+    'relative flex w-full items-center justify-center rounded-lg bg-component p-4 tracking-wide text-invert font-medium transition-all duration-200';
   const disabledClasses = 'cursor-not-allowed opacity-60 hover:opacity-60';
 
   if (!availableForSale) {
     return (
       <button disabled className={clsx(buttonClasses, disabledClasses)}>
-        Out Of Stock
+        在庫切れ
       </button>
     );
   }
@@ -38,14 +38,14 @@ function SubmitButton({
         <div className="absolute left-0 ml-4">
           <PlusIcon className="h-5" />
         </div>
-        Add To Cart
+        カートへ入れる
       </button>
     );
   }
 
   return (
     <button
-      aria-label="Add to cart"
+      aria-label="カートへ入れる"
       className={clsx(buttonClasses, {
         'hover:opacity-90': true
       })}
@@ -53,7 +53,7 @@ function SubmitButton({
       <div className="absolute left-0 ml-4">
         <PlusIcon className="h-5" />
       </div>
-      Add To Cart
+      カートへ入れる
     </button>
   );
 }

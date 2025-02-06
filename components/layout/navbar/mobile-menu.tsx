@@ -35,7 +35,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
       <button
         onClick={openMobileMenu}
         aria-label="Open mobile menu"
-        className="text-primary flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 transition-colors md:hidden"
+        className="flex h-11 w-11 items-center justify-center rounded-md bg-component text-invert transition-colors hover:bg-component-hover lg:hidden"
       >
         <Bars3Icon className="h-4" />
       </button>
@@ -64,7 +64,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
             <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col bg-white pb-6">
               <div className="p-4">
                 <button
-                  className="text-primary mb-4 flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 transition-colors"
+                  className="mb-4 flex h-11 w-11 items-center justify-center rounded-md text-primary transition-colors"
                   onClick={closeMobileMenu}
                   aria-label="Close mobile menu"
                 >
@@ -80,7 +80,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                   <ul className="flex w-full flex-col">
                     {menu.map((item: Menu) => (
                       <li
-                        className="text-primary py-2 text-xl transition-colors hover:text-neutral-500"
+                        className="py-2 text-xl text-primary transition-colors hover:text-neutral-500"
                         key={item.title}
                       >
                         <Link href={item.path} prefetch={true} onClick={closeMobileMenu}>

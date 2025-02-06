@@ -35,7 +35,7 @@
   --surface-primary: var(--neutral-0);
   --surface-secondary: var(--neutral-100);
   --surface-component: var(--neutral-900);
-  --surface-component-secondary: var(--neutral-100);
+  --surface-component-secondary: var(--brand-secondary);
   --surface-component-hover: var(--neutral-800);
   --surface-hover: var(--neutral-200);
   --surface-accent: var(--brand-secondary);

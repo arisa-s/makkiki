@@ -1,7 +1,7 @@
-import { M_PLUS_Rounded_1c } from 'next/font/google';
+import { Hina_Mincho, Mochiy_Pop_P_One, Zen_Kaku_Gothic_Antique } from 'next/font/google';
 import localFont from 'next/font/local';
 
-export const makkikiAccent = localFont({
+export const makkikiBrand = localFont({
   src: [
     {
       path: '../fonts/Makkiki-Accent.ttf',
@@ -12,8 +12,20 @@ export const makkikiAccent = localFont({
   variable: '--font-brand'
 });
 
-export const mPlusRounded1c = M_PLUS_Rounded_1c({
+export const zenKakuGothicAntique = Zen_Kaku_Gothic_Antique({
   variable: '--font-base',
-  weight: ['100', '300', '400', '500', '700', '800', '900'],
+  weight: ['300', '400', '500', '700', '900'],
+  subsets: ['latin']
+});
+
+export const mPlusRounded1c = Hina_Mincho({
+  variable: '--font-accent',
+  weight: ['400'],
+  subsets: ['latin']
+});
+
+export const mochiy = Mochiy_Pop_P_One({
+  variable: '--font-accent-secondary',
+  weight: ['400'],
   subsets: ['latin']
 });
