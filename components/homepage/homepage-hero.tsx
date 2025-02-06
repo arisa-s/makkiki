@@ -32,7 +32,7 @@ export const HomepageHero = () => {
 
           <div className="-mt-12 mr-24 grid grid-cols-2 content-evenly justify-between gap-20">
             {images.slice(2).map((img, index) => (
-              <div className="mx-12">
+              <div className="mx-12" key={index}>
                 <CategoryButton key={index} {...img} />
               </div>
             ))}

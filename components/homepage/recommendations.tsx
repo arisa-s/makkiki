@@ -40,9 +40,9 @@ export async function Reccomendations() {
   const [firstProduct, secondProduct, thirdProduct] = homepageItems;
 
   return (
-    <section className="mx-auto max-w-screen-2xl space-y-12 px-4 py-24 pb-4">
+    <section className="mx-auto max-w-screen-2xl space-y-12 px-4 py-12 pb-4 md:py-24">
       <SectionTitle title="おすすめアイテム" />
-      <div className="grid grid-cols-3 gap-12 px-20">
+      <div className="grid grid-cols-2 gap-6 md:grid-cols-3 md:gap-12 md:px-20">
         <Reccomendation item={firstProduct} />
         <Reccomendation item={secondProduct} />
         <Reccomendation item={thirdProduct} />

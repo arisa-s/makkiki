@@ -10,9 +10,9 @@ export function ProductDescription({ product }: { product: Product }) {
   return (
     <>
       <div className="mb-6 flex flex-col gap-6 border-b pb-6 md:gap-12">
-        <h1 className="font-accent mb-2 text-3xl font-medium md:text-4xl">{product.title}</h1>
+        <h1 className="mb-2 font-accent text-3xl font-medium md:text-4xl">{product.title}</h1>
 
-        <div className="text-primary mr-auto w-auto rounded-md p-2 text-3xl">
+        <div className="mr-auto w-auto rounded-md p-2 text-3xl text-primary">
           <Price
             amount={product.priceRange.maxVariantPrice.amount}
             currencyCode={product.priceRange.maxVariantPrice.currencyCode}
@@ -20,7 +20,7 @@ export function ProductDescription({ product }: { product: Product }) {
         </div>
 
         {product.tags.length > 0 && (
-          <div className="text-primary flex flex-wrap gap-2 text-sm">
+          <div className="flex flex-wrap gap-2 text-sm text-primary">
             {product.tags.map((tag) => (
               <span key={tag} className="rounded-full bg-gray-200 px-3 py-1">
                 {tag}
@@ -38,7 +38,7 @@ export function ProductDescription({ product }: { product: Product }) {
         product.description && <p className="text-sm text-gray-700">{product.description}</p>
       )}
 
-      <AddToCart product={product} disabled={!product.availableForSale} />
+      <AddToCart product={product} />
     </>
   );
 }
