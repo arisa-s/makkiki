@@ -1,3 +1,4 @@
+import imageFragment from '../fragments/image';
 import productFragment from '../fragments/product';
 import seoFragment from '../fragments/seo';
 
@@ -6,11 +7,15 @@ const collectionFragment = /* GraphQL */ `
     handle
     title
     description
+    image {
+      ...image
+    }
     seo {
       ...seo
     }
     updatedAt
   }
+  ${imageFragment}
   ${seoFragment}
 `;
 
@@ -28,6 +33,9 @@ export const getCollectionsQuery = /* GraphQL */ `
     collections(first: 100, sortKey: TITLE) {
       edges {
         node {
+          metafield(namespace: "custom", key: "homepagebanner") {
+            banner: value
+          }
           ...collection
         }
       }

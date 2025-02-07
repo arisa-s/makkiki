@@ -14,18 +14,19 @@ export default async function SearchPage(props: {
   const searchParams = await props.searchParams;
   const { sort, q: searchValue } = searchParams as { [key: string]: string };
   const { sortKey, reverse } = sorting.find((item) => item.slug === sort) || defaultSort;
+  const decodedSearchValue = searchValue ? decodeURIComponent(searchValue) : '';
 
-  const products = await getProducts({ sortKey, reverse, query: searchValue });
+  const products = await getProducts({ sortKey, reverse, query: decodedSearchValue });
   const resultsText = products.length > 1 ? 'results' : 'result';
 
   return (
     <>
-      {searchValue ? (
+      {decodedSearchValue ? (
         <p className="mb-4">
           {products.length === 0
             ? 'There are no products that match '
             : `Showing ${products.length} ${resultsText} for `}
-          <span className="font-bold">&quot;{searchValue}&quot;</span>
+          <span className="font-bold">&quot;{decodedSearchValue}&quot;</span>
         </p>
       ) : null}
       {products.length > 0 ? (

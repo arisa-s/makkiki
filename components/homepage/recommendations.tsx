@@ -4,7 +4,7 @@ import type { Product } from 'lib/shopify/types';
 import Image from 'next/image';
 import Link from 'next/link';
 
-function Reccomendation({ item, priority }: { item: Product; priority?: boolean }) {
+function Reccomendation({ item }: { item: Product; priority?: boolean }) {
   return (
     <div className="row-span-1 space-y-6">
       <div className={`w-full bg-neutral-200 p-6`}>
@@ -17,14 +17,18 @@ function Reccomendation({ item, priority }: { item: Product; priority?: boolean 
             <Image
               src={item.featuredImage.url}
               alt={item.title}
-              fill
+              width={item.featuredImage.width}
+              height={item.featuredImage.height}
+              objectFit="cover"
               className="relative h-full w-full transition duration-300 ease-in-out group-hover:scale-105"
             />
           </div>
         </Link>
       </div>
-      <h3 className="font-accent text-xl">{item.title}</h3>
-      <p>{item.description}</p>
+      <div className="space-y-2 md:space-y-4">
+        <h3 className="font-accent text-xl">{item.title}</h3>
+        <p>{item.description}</p>
+      </div>
     </div>
   );
 }

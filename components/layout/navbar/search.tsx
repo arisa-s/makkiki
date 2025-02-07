@@ -6,16 +6,17 @@ import { useSearchParams } from 'next/navigation';
 
 export default function Search() {
   const searchParams = useSearchParams();
+  const decodedKey = decodeURIComponent(searchParams?.get('q') || '');
 
   return (
     <Form action="/search" className="w-max-[550px] relative w-full lg:w-80 xl:w-full">
       <input
-        key={searchParams?.get('q')}
+        key={decodedKey}
         type="text"
         name="q"
         placeholder="何かお探しですか？"
         autoComplete="off"
-        defaultValue={searchParams?.get('q') || ''}
+        defaultValue={decodedKey}
         className="text-md w-full rounded-lg border bg-primary px-4 py-2 text-primary placeholder:text-neutral-500 md:text-sm"
       />
       <div className="absolute right-0 top-0 mr-3 flex h-full items-center">

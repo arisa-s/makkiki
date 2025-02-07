@@ -3,14 +3,17 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import Grid from 'components/grid';
+import SectionTitle from 'components/homepage/section-title';
 import ProductGridItems from 'components/layout/product-grid-items';
+import Prose from 'components/prose';
 import { defaultSort, sorting } from 'lib/constants';
 
 export async function generateMetadata(props: {
   params: Promise<{ collection: string }>;
 }): Promise<Metadata> {
   const params = await props.params;
-  const collection = await getCollection(params.collection);
+  const decodedCollectionHandle = decodeURIComponent(params.collection);
+  const collection = await getCollection(decodedCollectionHandle);
 
   if (!collection) return notFound();
 
@@ -29,12 +32,23 @@ export default async function CategoryPage(props: {
   const params = await props.params;
   const { sort } = searchParams as { [key: string]: string };
   const { sortKey, reverse } = sorting.find((item) => item.slug === sort) || defaultSort;
-  const products = await getCollectionProducts({ collection: params.collection, sortKey, reverse });
+  const collection = await getCollection(decodeURIComponent(params.collection));
+  const products = await getCollectionProducts({
+    collection: decodeURIComponent(params.collection),
+    sortKey,
+    reverse
+  });
 
   return (
-    <section>
+    <section className="space-y-6 p-6 md:space-y-12 md:p-12">
+      {collection ? (
+        <div className="space-y-6">
+          <SectionTitle title={collection.title} />
+          <Prose html={collection.description} />
+        </div>
+      ) : null}
       {products.length === 0 ? (
-        <p className="py-3 text-lg">{`No products found in this collection`}</p>
+        <p className="py-3 text-lg">{`該当する商品が見つかりませんでした。`}</p>
       ) : (
         <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           <ProductGridItems products={products} />

@@ -274,6 +274,7 @@ export async function getCart(cartId: string | undefined): Promise<Cart | undefi
 }
 
 export async function getCollection(handle: string): Promise<Collection | undefined> {
+  console.log({ handle });
   const res = await shopifyFetch<ShopifyCollectionOperation>({
     query: getCollectionQuery,
     tags: [TAGS.collections],
@@ -321,11 +322,11 @@ export async function getCollections(): Promise<Collection[]> {
   const collections = [
     {
       handle: '',
-      title: 'All',
-      description: 'All products',
+      title: 'すべでの商品',
+      description: 'すべでの商品',
       seo: {
-        title: 'All',
-        description: 'All products'
+        title: 'すべでの商品',
+        description: 'すべでの商品'
       },
       path: '/search',
       updatedAt: new Date().toISOString()
@@ -338,6 +339,20 @@ export async function getCollections(): Promise<Collection[]> {
   ];
 
   return collections;
+}
+
+export async function getBannerCollections(): Promise<Collection[]> {
+  const res = await shopifyFetch<ShopifyCollectionsOperation>({
+    query: getCollectionsQuery,
+    tags: [TAGS.collections]
+  });
+  const shopifyCollections = removeEdgesAndNodes(res.body?.data?.collections);
+
+  return [
+    ...reshapeCollections(shopifyCollections)
+      .filter((collection) => !collection.handle.startsWith('hidden'))
+      .filter((collection) => collection.metafield?.banner === 'true')
+  ];
 }
 
 export async function getMenu(handle: string): Promise<Menu[]> {
@@ -403,11 +418,13 @@ export async function getProductRecommendations(productId: string): Promise<Prod
 export async function getProducts({
   query,
   reverse,
-  sortKey
+  sortKey,
+  limit = 10 // Default to 10 if not provided
 }: {
   query?: string;
   reverse?: boolean;
   sortKey?: string;
+  limit?: number;
 }): Promise<Product[]> {
   const res = await shopifyFetch<ShopifyProductsOperation>({
     query: getProductsQuery,
@@ -415,7 +432,8 @@ export async function getProducts({
     variables: {
       query,
       reverse,
-      sortKey
+      sortKey,
+      first: limit // Pass the limit as first
     }
   });
 

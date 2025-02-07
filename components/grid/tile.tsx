@@ -21,13 +21,13 @@ export function GridTileImage({
     <div
       className={clsx('group flex h-full w-full items-center justify-center overflow-hidden', {
         relative: label,
-        'border-primary border-2': active,
+        'border-2 border-primary': active,
         'border-primary': !active
       })}
     >
       {props.src ? (
         <Image
-          className={clsx('relative h-full w-full object-contain', {
+          className={clsx('relative h-full w-full object-cover', {
             'transition duration-300 ease-in-out group-hover:scale-105': isInteractive
           })}
           {...props}

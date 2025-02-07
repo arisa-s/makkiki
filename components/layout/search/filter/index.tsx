@@ -28,7 +28,10 @@ export default function FilterList({ list, title }: { list: ListItem[]; title?: 
         </ul>
         <ul className="md:hidden">
           <Suspense fallback={null}>
-            <FilterItemDropdown list={list} />
+            <div className="mb-6 space-y-2">
+              <label className="text-sm text-ternary">{title}</label>
+              <FilterItemDropdown list={list} />
+            </div>
           </Suspense>
         </ul>
       </nav>

@@ -20,14 +20,7 @@ export const CategoryButton: FC<CategoryButtonProps> = ({ src, height, width, al
       }}
       whileTap={{ scale: 0.9 }}
     >
-      <Image
-        src={src}
-        height={height}
-        width={width}
-        style={{ objectFit: 'contain' }}
-        className="w-full"
-        alt={alt}
-      />
+      <Image src={src} height={height} width={width} className="w-full" alt={alt} />
     </motion.div>
   );
 };

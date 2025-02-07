@@ -10,6 +10,7 @@ import { FilterItem } from './item';
 export default function FilterItemDropdown({ list }: { list: ListItem[] }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const decodedSortKey = decodeURIComponent(searchParams?.get('sort') || '');
   const [active, setActive] = useState('');
   const [openSelect, setOpenSelect] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -28,8 +29,8 @@ export default function FilterItemDropdown({ list }: { list: ListItem[] }) {
   useEffect(() => {
     list.forEach((listItem: ListItem) => {
       if (
-        ('path' in listItem && pathname === listItem.path) ||
-        ('slug' in listItem && searchParams.get('sort') === listItem.slug)
+        ('path' in listItem && decodeURIComponent(pathname) === listItem.path) ||
+        ('slug' in listItem && decodedSortKey === listItem.slug)
       ) {
         setActive(listItem.title);
       }
