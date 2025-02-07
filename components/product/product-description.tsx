@@ -20,7 +20,7 @@ export function ProductDescription({ product }: { product: Product }) {
         {product.tags.length > 0 && (
           <div className="flex flex-wrap gap-2 text-sm text-primary">
             {product.tags.map((tag) => (
-              <span key={tag} className="rounded-full bg-gray-200 px-3 py-1">
+              <span key={tag} className="rounded-full bg-neutral-200 px-3 py-1">
                 {tag}
               </span>
             ))}

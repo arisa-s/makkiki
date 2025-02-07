@@ -36,7 +36,7 @@ export const HomepageHero = () => {
     <div className="border-b-1 border-b border-primary">
       <div className="relative mx-auto h-screen max-w-[1512] bg-[url(/img/hero/mainBg.png)] bg-cover">
         {/* Content Container */}
-        <div className="absolute inset-0 z-40 hidden h-full w-full p-12 lg:block">
+        <div className="absolute inset-0 z-40 hidden h-full w-full p-12 xl:block">
           <div className="grid grid-cols-3 gap-40">
             <div className="ml-12 flex flex-col">
               <div className="my-auto space-y-4">
@@ -49,7 +49,7 @@ export const HomepageHero = () => {
             ))}
           </div>
 
-          <div className="-mt-12 mr-24 grid grid-cols-2 content-evenly justify-between gap-20">
+          <div className="mr-24 grid grid-cols-2 content-evenly justify-between gap-20 xl:-mt-12">
             {images.slice(2).map((img, index) => (
               <div className="mx-12" key={index}>
                 <CategoryButton key={index} {...img} />
@@ -59,10 +59,10 @@ export const HomepageHero = () => {
         </div>
 
         {/* For mobile */}
-        <div className="absolute inset-0 z-40 flex h-full w-full flex-col space-y-20 px-6 py-12 lg:hidden">
-          <div className="grid h-1/3 grid-cols-2 md:space-x-16">
+        <div className="absolute inset-0 z-40 flex h-full w-full flex-col space-y-20 px-6 py-12 lg:px-12 xl:hidden">
+          <div className="lg: grid h-1/3 grid-cols-2 md:space-x-16 lg:space-x-40">
             {images.slice(0, 2).map((img, index) => (
-              <div className={index === 0 ? 'md:mx-20' : ''} key={index}>
+              <div className={index === 0 ? 'md:mx-20 lg:mx-36' : ''} key={index}>
                 <CategoryButton key={index} {...img} />
               </div>
             ))}
@@ -73,9 +73,11 @@ export const HomepageHero = () => {
               <h1 className="font-brand text-7xl">MAKKiKi</h1>
             </div>
           </div>
-          <div className="grid h-1/3 grid-cols-2 content-evenly justify-between md:mx-12">
+          <div className="grid h-1/3 grid-cols-2 content-evenly justify-between md:mx-12 lg:mx-0">
             {images.slice(2).map((img, index) => (
-              <CategoryButton key={index} {...img} />
+              <div className="md:-mt-20 lg:mx-12">
+                <CategoryButton key={index} {...img} />
+              </div>
             ))}
           </div>
         </div>

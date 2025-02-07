@@ -10,7 +10,7 @@ export const CollectionsSection: FC<CollectionsSectionProps> = async ({}) => {
   const collections = await getBannerCollections();
 
   return (
-    <section className="mx-auto max-w-screen-2xl space-y-12 px-4 py-12 pb-4 md:space-y-24 md:py-24">
+    <section className="mx-auto max-w-screen-2xl space-y-12 px-4 pb-4 pt-12 md:space-y-24 md:pt-24">
       <SectionTitle title="カテゴリー" />
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-12 md:px-20">
         {collections.map((collection) => {

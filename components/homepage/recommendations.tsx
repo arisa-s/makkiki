@@ -9,7 +9,7 @@ function Reccomendation({ item }: { item: Product; priority?: boolean }) {
     <div className="row-span-1 space-y-6">
       <div className={`w-full bg-neutral-200 p-6`}>
         <Link
-          className="relative block aspect-square h-full w-full bg-primary"
+          className="relative block h-full w-full bg-primary"
           href={`/product/${item.handle}`}
           prefetch={true}
         >
@@ -19,8 +19,8 @@ function Reccomendation({ item }: { item: Product; priority?: boolean }) {
               alt={item.title}
               width={item.featuredImage.width}
               height={item.featuredImage.height}
-              objectFit="cover"
-              className="relative h-full w-full transition duration-300 ease-in-out group-hover:scale-105"
+              objectFit="contain"
+              className="relative w-full transition duration-300 ease-in-out group-hover:scale-105"
             />
           </div>
         </Link>
@@ -44,7 +44,7 @@ export async function Reccomendations() {
   const [firstProduct, secondProduct, thirdProduct] = homepageItems;
 
   return (
-    <section className="mx-auto max-w-screen-2xl space-y-12 px-4 py-12 pb-4 md:py-24">
+    <section className="mx-auto max-w-screen-2xl space-y-12 px-4 pb-4 pt-12 md:pt-24 lg:pt-36">
       <SectionTitle title="おすすめアイテム" />
       <div className="grid grid-cols-2 gap-6 md:grid-cols-3 md:gap-12 md:px-20">
         <Reccomendation item={firstProduct} />
