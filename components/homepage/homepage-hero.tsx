@@ -34,7 +34,7 @@ export const HomepageHero = () => {
 
   return (
     <div className="border-b-1 border-b border-primary">
-      <div className="relative mx-auto h-screen max-w-[1512] bg-[url(/img/hero/mainBg.png)] bg-cover">
+      <div className="relative mx-auto h-screen max-w-[1512px] bg-[url(/img/hero/mainBg.png)] bg-cover">
         {/* Content Container */}
         <div className="absolute inset-0 z-40 hidden h-full w-full p-12 xl:block">
           <div className="grid grid-cols-3 gap-40">
