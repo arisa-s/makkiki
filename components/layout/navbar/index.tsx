@@ -17,12 +17,12 @@ export async function Navbar() {
           <MobileMenu menu={menu} />
         </Suspense>
       </div>
-      <div className="flex w-full items-center">
-        <div className="flex w-full lg:w-1/3">
+      <div className="flex w-full items-center space-x-6">
+        <div className="flex w-full">
           <Link
             href="/"
             prefetch={true}
-            className="mr-2 flex w-full items-center justify-center lg:mr-6 lg:w-auto"
+            className="mr-2 flex w-full cursor-pointer items-center justify-center lg:mr-6 lg:w-auto"
           >
             <LogoSquare />
           </Link>
@@ -47,7 +47,7 @@ export async function Navbar() {
             <Search />
           </Suspense>
         </div>
-        <div className="flex justify-end lg:w-1/3">
+        <div className="flex justify-end">
           <CartModal />
         </div>
       </div>

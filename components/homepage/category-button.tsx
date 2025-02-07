@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FC } from 'react';
 
 export interface CategoryButtonProps {
@@ -8,9 +9,10 @@ export interface CategoryButtonProps {
   height: number;
   width: number;
   alt: string;
+  link: string;
 }
 
-export const CategoryButton: FC<CategoryButtonProps> = ({ src, height, width, alt }) => {
+export const CategoryButton: FC<CategoryButtonProps> = ({ src, height, width, alt, link }) => {
   return (
     <motion.div
       whileHover={{
@@ -20,7 +22,9 @@ export const CategoryButton: FC<CategoryButtonProps> = ({ src, height, width, al
       }}
       whileTap={{ scale: 0.9 }}
     >
-      <Image src={src} height={height} width={width} className="w-full" alt={alt} />
+      <Link href={link}>
+        <Image src={src} height={height} width={width} className="w-full" alt={alt} />
+      </Link>
     </motion.div>
   );
 };

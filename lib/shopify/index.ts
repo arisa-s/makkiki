@@ -274,7 +274,6 @@ export async function getCart(cartId: string | undefined): Promise<Cart | undefi
 }
 
 export async function getCollection(handle: string): Promise<Collection | undefined> {
-  console.log({ handle });
   const res = await shopifyFetch<ShopifyCollectionOperation>({
     query: getCollectionQuery,
     tags: [TAGS.collections],
@@ -306,7 +305,6 @@ export async function getCollectionProducts({
   });
 
   if (!res.body.data.collection) {
-    console.log(`No collection found for \`${collection}\``);
     return [];
   }
 
@@ -419,7 +417,7 @@ export async function getProducts({
   query,
   reverse,
   sortKey,
-  limit = 10 // Default to 10 if not provided
+  limit = 100
 }: {
   query?: string;
   reverse?: boolean;

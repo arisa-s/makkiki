@@ -173,7 +173,7 @@ export default function CartModal() {
                   </ul>
                   <div className="py-4 text-sm text-neutral-500">
                     <div className="mb-3 flex items-center justify-between border-b border-primary pb-1">
-                      <p>Taxes</p>
+                      <p>消費税</p>
                       <Price
                         className="text-right text-base text-primary"
                         amount={cart.cost.totalTaxAmount.amount}
@@ -181,11 +181,11 @@ export default function CartModal() {
                       />
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-primary pb-1 pt-1">
-                      <p>Shipping</p>
+                      <p>輸送費</p>
                       <p className="text-right">Calculated at checkout</p>
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-primary pb-1 pt-1">
-                      <p>Total</p>
+                      <p>合計</p>
                       <Price
                         className="text-right text-base text-primary"
                         amount={cart.cost.totalAmount.amount}

@@ -20,7 +20,7 @@ function PathFilterItem({ item }: { item: PathFilterItem }) {
     <li className="mt-2 flex text-primary" key={item.title}>
       <DynamicTag
         href={createUrl(item.path, newParams)}
-        className={clsx('w-full text-sm underline-offset-4 hover:underline', {
+        className={clsx('w-full underline-offset-4 hover:underline', {
           'underline underline-offset-4': active
         })}
       >
@@ -45,7 +45,7 @@ function SortFilterItem({ item }: { item: SortFilterItem }) {
   const DynamicTag = active ? 'p' : Link;
 
   return (
-    <li className="mt-2 flex text-sm text-primary" key={item.title}>
+    <li className="mt-2 flex text-primary" key={item.title}>
       <DynamicTag
         prefetch={!active ? false : undefined}
         href={href}

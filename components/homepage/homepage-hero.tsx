@@ -2,14 +2,33 @@ import CategoryButton from './category-button';
 
 export const HomepageHero = () => {
   const images = [
-    { src: '/img/hero/dogbag.png', height: 1075, width: 998, alt: 'link to dog bags section' },
-    { src: '/img/hero/marimekko.png', height: 1484, width: 1659, alt: 'link to marimekko section' },
-    { src: '/img/hero/golf.png', height: 1848, width: 1634, alt: 'link to golf section' },
+    {
+      src: '/img/hero/dogbag.png',
+      height: 1075,
+      width: 998,
+      alt: 'link to dog bags section',
+      link: '/search/マークテトロ-ショルダーバッグ'
+    },
+    {
+      src: '/img/hero/marimekko.png',
+      height: 1484,
+      width: 1659,
+      alt: 'link to marimekko section',
+      link: '/search/フィンランド-夏服'
+    },
+    {
+      src: '/img/hero/golf.png',
+      height: 1848,
+      width: 1634,
+      alt: 'link to golf section',
+      link: '/search/circolo-golf-ugolino-ゴルフウェア'
+    },
     {
       src: '/img/hero/babyclothes.png',
       height: 1872,
       width: 2287,
-      alt: 'link to baby clothes section'
+      alt: 'link to baby clothes section',
+      link: '/search/デンマーク子供服'
     }
   ];
 
