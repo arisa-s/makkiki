@@ -38,7 +38,9 @@ export type CartItem = {
 
 export type Collection = ShopifyCollection & {
   path: string;
-  banner: boolean;
+  metafield?: {
+    banner?: string;
+  };
 };
 
 export type Image = {
@@ -114,7 +116,7 @@ export type ShopifyCollection = {
   description: string;
   seo: SEO;
   updatedAt: string;
-  image: Image;
+  image?: Image;
 };
 
 export type ShopifyProduct = {
@@ -270,5 +272,6 @@ export type ShopifyProductsOperation = {
     query?: string;
     reverse?: boolean;
     sortKey?: string;
+    first?: number;
   };
 };
