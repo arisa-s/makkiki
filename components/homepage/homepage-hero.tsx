@@ -37,7 +37,7 @@ export const HomepageHero = () => {
       <div className="relative mx-auto h-screen max-w-[1512px] bg-[url(/img/hero/mainBg.png)] bg-cover">
         {/* Content Container */}
         <div className="absolute inset-0 z-40 hidden h-full w-full p-12 xl:block">
-          <div className="grid grid-cols-3 gap-40">
+          <div className="flex h-1/2 space-x-40">
             <div className="ml-12 flex flex-col">
               <div className="my-auto space-y-4">
                 <p className="text-2xl font-medium">気まぐれ輸入品店</p>
@@ -45,13 +45,15 @@ export const HomepageHero = () => {
               </div>
             </div>
             {images.slice(0, 2).map((img, index) => (
-              <CategoryButton key={index} {...img} />
+              <div className="max-w-96" key={index}>
+                <CategoryButton key={index} {...img} />
+              </div>
             ))}
           </div>
 
-          <div className="mr-24 grid grid-cols-2 content-evenly justify-between gap-20 xl:-mt-12">
+          <div className="mx-auto flex h-1/2 max-w-4xl justify-between space-x-20">
             {images.slice(2).map((img, index) => (
-              <div className="mx-12" key={index}>
+              <div className="max-w-96" key={index}>
                 <CategoryButton key={index} {...img} />
               </div>
             ))}
@@ -59,10 +61,10 @@ export const HomepageHero = () => {
         </div>
 
         {/* For mobile */}
-        <div className="absolute inset-0 z-40 flex h-full w-full flex-col space-y-20 px-6 py-12 lg:px-12 xl:hidden">
-          <div className="lg: grid h-1/3 grid-cols-2 md:space-x-16 lg:space-x-40">
+        <div className="absolute inset-0 z-40 flex h-full w-full flex-col space-y-6 px-6 py-12 lg:px-12 xl:hidden">
+          <div className="flex h-1/3 justify-between">
             {images.slice(0, 2).map((img, index) => (
-              <div className={index === 0 ? 'md:mx-20 lg:mx-36' : ''} key={index}>
+              <div className="w-60 md:w-80">
                 <CategoryButton key={index} {...img} />
               </div>
             ))}
@@ -73,9 +75,9 @@ export const HomepageHero = () => {
               <h1 className="font-brand text-6xl md:text-7xl">MAKKiKi</h1>
             </div>
           </div>
-          <div className="grid h-1/3 grid-cols-2 content-evenly justify-between pt-12 md:mx-12 md:pt-0 lg:mx-0">
+          <div className="flex h-1/3 justify-between">
             {images.slice(2).map((img, index) => (
-              <div className="-mx-12 md:mx-0 md:-mt-20 lg:mx-12">
+              <div className="w-60 md:w-80">
                 <CategoryButton key={index} {...img} />
               </div>
             ))}
