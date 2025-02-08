@@ -61,7 +61,7 @@ export const HomepageHero = () => {
         </div>
 
         {/* For mobile */}
-        <div className="absolute inset-0 z-40 flex h-full w-full flex-col space-y-6 px-6 py-12 lg:px-12 xl:hidden">
+        <div className="absolute inset-0 z-40 flex h-screen w-full flex-col space-y-6 px-6 py-12 lg:px-12 xl:hidden">
           <div className="flex h-1/3 justify-between">
             {images.slice(0, 2).map((img, index) => (
               <div className="w-60 md:w-80">
