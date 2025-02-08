@@ -1,7 +1,12 @@
-import { Hina_Mincho, Mochiy_Pop_P_One, Zen_Kaku_Gothic_Antique } from 'next/font/google';
+import {
+  Hina_Mincho,
+  Mochiy_Pop_P_One,
+  Passion_One,
+  Zen_Kaku_Gothic_Antique
+} from 'next/font/google';
 import localFont from 'next/font/local';
 
-export const makkikiBrand = localFont({
+export const moomin = localFont({
   src: [
     {
       path: '../fonts/Makkiki-Accent.ttf',
@@ -9,7 +14,13 @@ export const makkikiBrand = localFont({
       weight: '400'
     }
   ],
-  variable: '--font-brand'
+  variable: '--font-moomin'
+});
+
+export const passionOne = Passion_One({
+  variable: '--font-brand',
+  weight: ['400', '700', '900'],
+  subsets: ['latin']
 });
 
 export const zenKakuGothicAntique = Zen_Kaku_Gothic_Antique({

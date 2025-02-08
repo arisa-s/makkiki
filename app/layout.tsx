@@ -5,7 +5,7 @@ import { GeistSans } from 'geist/font/sans';
 import { getCart } from 'lib/shopify';
 import { ensureStartsWith } from 'lib/utils';
 import { cookies } from 'next/headers';
-import { makkikiBrand, mPlusRounded1c, zenKakuGothicAntique } from 'public/fonts';
+import { moomin, mPlusRounded1c, passionOne, zenKakuGothicAntique } from 'public/fonts';
 import { ReactNode } from 'react';
 import { Toaster } from 'sonner';
 import './globals.css';
@@ -45,7 +45,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${mPlusRounded1c.variable} ${makkikiBrand.variable} ${zenKakuGothicAntique.variable}`}
+      className={`${GeistSans.variable} ${mPlusRounded1c.variable} ${moomin.variable} ${zenKakuGothicAntique.variable} ${passionOne.variable}`}
     >
       <body className="bg-neutral-50 font-base text-primary selection:bg-teal-300">
         <CartProvider cartPromise={cart}>

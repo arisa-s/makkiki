@@ -40,7 +40,7 @@ export const HomepageHero = () => {
           <div className="grid grid-cols-3 gap-40">
             <div className="ml-12 flex flex-col">
               <div className="my-auto space-y-4">
-                <p className="text-2xl font-medium">まきぶーの気まぐれ輸入品店</p>
+                <p className="text-2xl font-medium">気まぐれ輸入品店</p>
                 <h1 className="font-brand text-8xl">MAKKiKi</h1>
               </div>
             </div>
