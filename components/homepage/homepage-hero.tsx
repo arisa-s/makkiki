@@ -69,7 +69,7 @@ export const HomepageHero = () => {
           </div>
           <div className="z-50 mx-auto flex flex-col">
             <div className="my-auto space-y-4 text-center">
-              <p className="text-lg font-medium md:text-xl">まきぶーの気まぐれ輸入品店</p>
+              <p className="text-lg font-medium md:text-xl">気まぐれ輸入品店</p>
               <h1 className="font-brand text-6xl md:text-7xl">MAKKiKi</h1>
             </div>
           </div>
