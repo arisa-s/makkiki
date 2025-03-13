@@ -32,7 +32,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
 
         {images.length > 1 ? (
           <div className="absolute bottom-[15%] flex w-full justify-center">
-            <div className="text-primary border-primary mx-auto flex h-11 items-center rounded-full border bg-neutral-50/80 backdrop-blur">
+            <div className="bg-primary/20 no-rounded-full mx-auto flex h-11 items-center border border-primary text-primary backdrop-blur">
               <button
                 formAction={() => {
                   const newState = updateImage(previousImageIndex.toString());
@@ -43,7 +43,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
               >
                 <ArrowLeftIcon className="h-5" />
               </button>
-              <div className="mx-1 h-6 w-px bg-neutral-500"></div>
+              <div className="bg-primary0 mx-1 h-6 w-px"></div>
               <button
                 formAction={() => {
                   const newState = updateImage(nextImageIndex.toString());

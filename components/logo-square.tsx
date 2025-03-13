@@ -1,20 +1,14 @@
 import clsx from 'clsx';
-import LogoIcon from './icons/logo';
+import Image from 'next/image';
 
 export default function LogoSquare({ size }: { size?: 'sm' | undefined }) {
   return (
-    <div
-      className={clsx('flex flex-none items-center justify-center', {
-        'h-[60px] w-[120px]': !size,
-        'h-[50px] w-[100px] rounded-lg': size === 'sm'
-      })}
-    >
-      <LogoIcon
-        className={clsx({
-          'h-[60px] w-[120px]': !size,
-          'h-[40px] w-[px]': size === 'sm'
-        })}
-      />
+    <div className={clsx('flex flex-none items-center justify-center py-4')}>
+      <Image src="/brand/makkiki_logo.webp" alt="MAKKiKi" width={80} height={80} />
+      <div className="-mt-2 text-right">
+        <span className="leading-1 text-xs">まっきっき</span>
+        <h1 className="text-2xl font-thin">MAKKiKi</h1>
+      </div>
     </div>
   );
 }

@@ -11,19 +11,6 @@ const config: Config = {
         'brand-primary': 'var(--brand-primary)',
         'brand-secondary': 'var(--brand-secondary)',
 
-        /* Neutral colors */
-        'neutral-0': 'var(--neutral-0)',
-        'neutral-50': 'var(--neutral-50)',
-        'neutral-100': 'var(--neutral-100)',
-        'neutral-200': 'var(--neutral-200)',
-        'neutral-300': 'var(--neutral-300)',
-        'neutral-400': 'var(--neutral-400)',
-        'neutral-500': 'var(--neutral-500)',
-        'neutral-600': 'var(--neutral-600)',
-        'neutral-700': 'var(--neutral-700)',
-        'neutral-800': 'var(--neutral-800)',
-        'neutral-900': 'var(--neutral-900)',
-
         /* Text colors */
         primary: 'var(--text-primary)',
         secondary: 'var(--text-secondary)',
@@ -37,9 +24,10 @@ const config: Config = {
         secondary: 'var(--surface-secondary)',
         component: 'var(--surface-component)',
         'component-secondary': 'var(--surface-component-secondary)',
-        'component-secondary-hover': 'var(--surface-component-secondary)',
+        'component-secondary-hover': 'var(--surface-component-secondary-hover)',
         'component-hover': 'var(--surface-component-hover)',
-        hover: 'var(--surface-hover)'
+        hover: 'var(--surface-hover)',
+        accent: 'var(--surface-accent)'
       },
       borderColor: {
         DEFAULT: 'var(--border-primary)',
@@ -50,6 +38,21 @@ const config: Config = {
         base: ['var(--font-base)'],
         brand: ['var(--font-brand)'],
         'accent-secondary': ['var(--font-accent-secondary)']
+      },
+      fontSize: {
+        xs: '0.6rem', // 12px
+        sm: '0.75rem', // 14px
+        base: '0.875rem', // 16px
+        lg: '1rem', // 18px
+        xl: '1.1rem', // 20px
+        '2xl': '1.25rem', // 24px
+        '3xl': '1.5rem', // 30px
+        '4xl': '1.875rem', // 36px
+        '5xl': '2.25rem', // 48px
+        '6xl': '3rem', // 60px
+        '7xl': '3.75rem', // 72px
+        '8xl': '4.5rem', // 96px
+        '9xl': '6rem' // 128px
       },
       keyframes: {
         fadeIn: {

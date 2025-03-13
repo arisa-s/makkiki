@@ -72,12 +72,12 @@ export function VariantSelector({
                 disabled={!isAvailableForSale}
                 title={`${option.name} ${value}${!isAvailableForSale ? ' (Out of Stock)' : ''}`}
                 className={clsx(
-                  'flex min-w-[48px] items-center justify-center rounded-full border bg-neutral-100 px-2 py-1 text-sm',
+                  'no-rounded-full flex min-w-[48px] items-center justify-center border bg-primary px-2 py-1 text-sm',
                   {
                     'cursor-default ring-2 ring-blue-600': isActive,
                     'ring-1 ring-transparent transition duration-300 ease-in-out hover:ring-blue-600':
                       !isActive && isAvailableForSale,
-                    'relative z-10 cursor-not-allowed overflow-hidden bg-neutral-100 text-neutral-500 ring-1 ring-neutral-300 before:absolute before:inset-x-0 before:-z-10 before:h-px before:-rotate-45 before:bg-neutral-300 before:transition-transform':
+                    'text-accent relative z-10 cursor-not-allowed overflow-hidden bg-primary ring-1 ring-primary before:absolute before:inset-x-0 before:-z-10 before:h-px before:-rotate-45 before:bg-secondary before:transition-transform':
                       !isAvailableForSale
                   }
                 )}

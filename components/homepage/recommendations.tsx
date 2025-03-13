@@ -7,13 +7,13 @@ import Link from 'next/link';
 function Reccomendation({ item }: { item: Product; priority?: boolean }) {
   return (
     <div className="row-span-1 space-y-6">
-      <div className={`w-full bg-neutral-200 p-6`}>
+      <div className={`w-full bg-secondary p-6`}>
         <Link
           className="relative block h-full w-full bg-primary"
           href={`/product/${item.handle}`}
           prefetch={true}
         >
-          <div className="bg-neutral-200">
+          <div className="bg-secondary">
             <Image
               src={item.featuredImage.url}
               alt={item.title}

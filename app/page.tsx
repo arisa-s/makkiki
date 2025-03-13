@@ -1,6 +1,6 @@
 import CollectionsSection from 'components/homepage/collections-section';
-import HomepageHero from 'components/homepage/homepage-hero';
 import LatestArrival from 'components/homepage/latest-arrival-section';
+import NewsBanner from 'components/homepage/news-banner';
 import { Reccomendations } from 'components/homepage/recommendations';
 import Footer from 'components/layout/footer';
 
@@ -14,10 +14,10 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
-      <HomepageHero />
-      {/* <NewsBanner text="新着：イタリアのお洒落おばあちゃんのマストアイテムであるグラスホルダー、多数入荷しました！" /> */}
-      <Reccomendations />
+      {/* <HomepageHero /> */}
+      <NewsBanner text="新着：イタリアのお洒落おばあちゃんのマストアイテムであるグラスホルダー、多数入荷しました！" />
       <CollectionsSection />
+      <Reccomendations />
       <LatestArrival />
       <Footer />
     </>

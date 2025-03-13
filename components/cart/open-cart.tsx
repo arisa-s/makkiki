@@ -1,4 +1,4 @@
-import { ShoppingCartIcon } from '@heroicons/react/24/outline';
+import { ShoppingBagIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 
 export default function OpenCart({
@@ -9,13 +9,13 @@ export default function OpenCart({
   quantity?: number;
 }) {
   return (
-    <div className="relative flex h-11 w-11 items-center justify-center rounded-md bg-component text-invert transition-colors hover:bg-component-hover">
-      <ShoppingCartIcon
-        className={clsx('h-4 transition-all ease-in-out hover:scale-110', className)}
+    <div className="relative flex h-11 w-11 items-center justify-center transition-colors">
+      <ShoppingBagIcon
+        className={clsx('h-6 transition-all ease-in-out hover:scale-110', className)}
       />
 
       {quantity ? (
-        <div className="absolute right-0 top-0 -mr-2 -mt-2 h-4 w-4 rounded bg-component-secondary text-[11px] font-medium text-primary">
+        <div className="bg-accent absolute right-0 top-0 -mr-2 -mt-2 h-4 w-4 rounded text-[11px] font-medium text-primary">
           {quantity}
         </div>
       ) : null}

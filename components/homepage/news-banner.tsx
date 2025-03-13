@@ -7,11 +7,8 @@ export interface NewsBannerProps {
 
 export const NewsBanner: FC<NewsBannerProps> = ({ text }) => {
   return (
-    <Marquee
-      autoFill
-      className="text-text-invert w-full border-b border-primary bg-primary py-4 text-lg font-medium"
-    >
-      <p className="px-6 sm:text-xl">{text}</p>
+    <Marquee autoFill className="w-full border-b border-t border-primary bg-primary py-2">
+      <p className="px-6">{text}</p>
     </Marquee>
   );
 };

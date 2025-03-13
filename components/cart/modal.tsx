@@ -1,7 +1,7 @@
 'use client';
 
 import { Dialog, Transition } from '@headlessui/react';
-import { ShoppingCartIcon } from '@heroicons/react/24/outline';
+import { ShoppingBagIcon } from '@heroicons/react/24/outline';
 import LoadingDots from 'components/loading-dots';
 import Price from 'components/price';
 import { DEFAULT_OPTION } from 'lib/constants';
@@ -84,7 +84,7 @@ export default function CartModal() {
 
               {!cart || cart.lines.length === 0 ? (
                 <div className="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
-                  <ShoppingCartIcon className="h-16" />
+                  <ShoppingBagIcon className="h-16" />
                   <p className="mt-6 text-center text-2xl font-bold">買い物かごが空です。</p>
                 </div>
               ) : (
@@ -109,13 +109,13 @@ export default function CartModal() {
                         );
 
                         return (
-                          <li key={i} className="border-neutral-300s flex w-full flex-col border-b">
+                          <li key={i} className="flex w-full flex-col border-b border-primary">
                             <div className="relative flex w-full flex-row justify-between px-1 py-4">
                               <div className="absolute z-40 -ml-1 -mt-2">
                                 <DeleteItemButton item={item} optimisticUpdate={updateCartItem} />
                               </div>
                               <div className="flex flex-row">
-                                <div className="relative h-16 w-16 overflow-hidden rounded-md border border-neutral-300 bg-neutral-300">
+                                <div className="relative h-16 w-16 overflow-hidden rounded-md border border-primary bg-secondary">
                                   <Image
                                     className="h-full w-full object-cover"
                                     width={64}
@@ -137,7 +137,7 @@ export default function CartModal() {
                                       {item.merchandise.product.title}
                                     </span>
                                     {item.merchandise.title !== DEFAULT_OPTION ? (
-                                      <p className="text-sm text-neutral-500">
+                                      <p className="text-accent text-sm">
                                         {item.merchandise.title}
                                       </p>
                                     ) : null}
@@ -150,7 +150,7 @@ export default function CartModal() {
                                   amount={item.cost.totalAmount.amount}
                                   currencyCode={item.cost.totalAmount.currencyCode}
                                 />
-                                <div className="ml-auto flex h-9 flex-row items-center rounded-full border border-primary">
+                                <div className="no-rounded-full ml-auto flex h-9 flex-row items-center border border-primary">
                                   <EditItemQuantityButton
                                     item={item}
                                     type="minus"
@@ -171,7 +171,7 @@ export default function CartModal() {
                         );
                       })}
                   </ul>
-                  <div className="py-4 text-sm text-neutral-500">
+                  <div className="text-accent py-4 text-sm">
                     <div className="mb-3 flex items-center justify-between border-b border-primary pb-1">
                       <p>消費税</p>
                       <Price
@@ -211,7 +211,7 @@ function CheckoutButton() {
 
   return (
     <button
-      className="block w-full rounded-full bg-component p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
+      className="no-rounded-full block w-full bg-component p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
       type="submit"
       disabled={pending}
     >

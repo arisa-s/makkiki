@@ -4,43 +4,32 @@
 
 /* Light theme colors */
 :root {
-  --background: #fcfdfc;
-  --foreground: #B24800;
-  --brand-primary: #FCCA00;
-  --brand-secondary: #FEF163;
-
-  /* Neutral colors */
-  --neutral-0: #f9f6f2;
-  --neutral-50: #f1e8df;
-  --neutral-100: #e8dace;
-  --neutral-200: #d9c2b0;
-  --neutral-300: #c6a68c;
-  --neutral-400: #b58d6c;
-  --neutral-500:  #a5734b;
-  --neutral-600: #9b5e30;
-  --neutral-700:  #9c521d;
-  --neutral-800: #a14c0f;
-  --neutral-900: #B24800;
+  --background: #FFFFFF;
+  --brand-primary: #DED249;
+  --brand-secondary: #EAE3A5;
 
   /* Text colors */
-  --text-primary: var(--neutral-900);
-  --text-secondary: var(--neutral-800);
-  --text-ternary: var(--neutral-500);
-  --text-invert: var(--neutral-100);
-  --text-accent: var(--brand-primary);
+  --text-primary: #404040;
+  --text-secondary: #808E91;
+  --text-ternary: #A3AEB1;
+  --text-invert: #ffffff;
+  --text-accent: #DED249;
   --text-error: #BF1F25;
 
   /* Surface colors */
-  --surface-primary: var(--neutral-0);
-  --surface-secondary: var(--neutral-100);
-  --surface-component: var(--neutral-900);
-  --surface-component-secondary: var(--brand-secondary);
-  --surface-component-hover: var(--neutral-800);
-  --surface-hover: var(--neutral-200);
-  --surface-accent: var(--brand-secondary);
+  --surface-primary: #FFFFFF;
+  --surface-secondary: #F9FBFC;
+  --surface-component: #404040;
+  --surface-component-hover: #000000;
+  --surface-component-secondary: #F9FBFC;
+  --surface-component-secondary-hover: #EAE3A5;
+  --surface-hover: #f6f4f4;
+  --surface-accent: #EAE3A5;
 
   /* Border colors */
-  --border-primary: var(--neutral-300);
+  --border-primary: #E1E6EA;
+
+  --ring-primary: #E1E6EA;
 }
 
 body {

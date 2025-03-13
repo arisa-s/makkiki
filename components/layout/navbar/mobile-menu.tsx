@@ -35,9 +35,9 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
       <button
         onClick={openMobileMenu}
         aria-label="Open mobile menu"
-        className="flex h-11 w-11 items-center justify-center rounded-md bg-component text-invert transition-colors hover:bg-component-hover lg:hidden"
+        className="flex h-11 w-11 items-center justify-center rounded-md transition-colors lg:hidden"
       >
-        <Bars3Icon className="h-4" />
+        <Bars3Icon className="h-6" />
       </button>
       <Transition show={isOpen}>
         <Dialog onClose={closeMobileMenu} className="relative z-50">
@@ -80,7 +80,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                   <ul className="flex w-full flex-col">
                     {menu.map((item: Menu) => (
                       <li
-                        className="py-2 text-xl text-primary transition-colors hover:text-neutral-500"
+                        className="hover:text-accent py-2 text-xl text-primary transition-colors"
                         key={item.title}
                       >
                         <Link href={item.path} prefetch={true} onClick={closeMobileMenu}>
