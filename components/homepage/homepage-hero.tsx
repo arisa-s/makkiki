@@ -39,33 +39,49 @@ export const HomepageHero = () => {
         <div className="absolute inset-0 z-40 hidden h-full w-full p-12 xl:block">
           <div className="flex h-1/2 space-x-40">
             <div className="ml-12 flex flex-col">
-              <div className="my-auto w-full max-w-4xl space-y-4">
-                <h1 className="text-8xl">MAKKiKi</h1>
-                <p className="text-5xl">
-                  MAKKiKiでは人生を楽しくハッピーにするような
-                  <br />
-                  ワクワクドキドキする雑貨を販売しています。
-                </p>
+              <div className="my-auto space-y-4">
+                <p className="text-2xl font-medium">気まぐれ輸入品店</p>
+                <h1 className="font-brand text-8xl">MAKKiKi</h1>
               </div>
             </div>
+            {images.slice(0, 2).map((img, index) => (
+              <div className="max-w-96" key={index}>
+                <CategoryButton key={index} {...img} />
+              </div>
+            ))}
+          </div>
+
+          <div className="mx-auto flex h-1/2 max-w-4xl justify-between space-x-20">
+            {images.slice(2).map((img, index) => (
+              <div className="max-w-96" key={index}>
+                <CategoryButton key={index} {...img} />
+              </div>
+            ))}
           </div>
         </div>
 
         {/* For mobile */}
         <div className="absolute inset-0 z-40 flex h-screen w-full flex-col space-y-6 px-6 py-12 lg:px-12 xl:hidden">
+          <div className="flex h-1/3 justify-between">
+            {images.slice(0, 2).map((img, index) => (
+              <div className="w-60 md:w-80">
+                <CategoryButton key={index} {...img} />
+              </div>
+            ))}
+          </div>
           <div className="z-50 mx-auto flex flex-col">
             <div className="my-auto space-y-4 text-center">
-              <h1 className="text-6xl md:text-7xl">MAKKiKi</h1>
-              <p>
-                黄色はスピリチュアな意味合いで豊かさを連想させる色であり、喜色とも書かれます。MAKKiKiでは人生を楽しくハッピーにするようなワクワクドキドキする雑貨を販売しています。
-                <br />
-                ヨーロッパ、アメリカ、オーストラリアを中心に心豊かな「もの」との出会いを求めて自ら買付を行なっています。
-                <br />
-                MAKKiKi〜豊かさ〜をショップ名に選んだのは、実際に買い付けに出向いた場所で自らが心豊かになったものとの出会いを大切にしたかったから。そしてMAKKiKiがその感動をシェアできる場所でありたいと願っているからです。
-              </p>
+              <p className="text-lg font-medium md:text-xl">気まぐれ輸入品店</p>
+              <h1 className="font-brand text-6xl md:text-7xl">MAKKiKi</h1>
             </div>
           </div>
-          <div className="flex h-1/3 justify-between"></div>
+          <div className="flex h-1/3 justify-between">
+            {images.slice(2).map((img, index) => (
+              <div className="w-60 md:w-80">
+                <CategoryButton key={index} {...img} />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Background scraps */}
