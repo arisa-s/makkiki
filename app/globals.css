@@ -40,5 +40,13 @@ body {
 }
 
 a {
- cursor: pointer;
+  cursor: pointer;
+}
+
+/* Only keep the essential react-multi-carousel override */
+.react-multi-carousel-dot-list {
+  bottom: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
 }

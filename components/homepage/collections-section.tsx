@@ -8,7 +8,7 @@ export const CollectionsSection: FC<CollectionsSectionProps> = async ({}) => {
   const collections = await getBannerCollections();
 
   return (
-    <section className="mx-auto max-w-screen-2xl space-y-12 px-4 pb-4 pt-12 md:space-y-24 md:pt-24">
+    <section className="md:space-y-26 -mx-2 mx-auto max-w-screen-2xl space-y-12 pt-12 md:pt-24">
       <CollectionsCarousel collections={collections} />
     </section>
   );

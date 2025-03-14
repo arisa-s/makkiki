@@ -342,7 +342,8 @@ export async function getCollections(): Promise<Collection[]> {
 export async function getBannerCollections(): Promise<Collection[]> {
   const res = await shopifyFetch<ShopifyCollectionsOperation>({
     query: getCollectionsQuery,
-    tags: [TAGS.collections]
+    tags: [TAGS.collections],
+    cache: process.env.NODE_ENV === 'development' ? 'no-store' : undefined
   });
   const shopifyCollections = removeEdgesAndNodes(res.body?.data?.collections);
 
