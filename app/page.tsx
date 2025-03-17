@@ -14,7 +14,7 @@ export const metadata = {
 export default async function HomePage() {
   return (
     <div className="flex min-h-screen flex-col">
-      <div className="flex flex-col gap-8 px-4 py-8 md:gap-12 md:px-8 md:py-12">
+      <div className="flex flex-col gap-16 px-4 py-16 md:gap-32 md:px-8 md:py-24">
         <AboutSection />
         <CollectionsSection />
         <Reccomendations />

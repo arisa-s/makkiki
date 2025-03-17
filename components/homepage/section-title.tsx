@@ -7,9 +7,9 @@ export interface SectionTitleProps {
 export const SectionTitle: FC<SectionTitleProps> = ({ title }) => {
   return (
     <div className="flex w-full items-center">
-      <div className="flex-1 border-t border-brand-primary"></div>
-      <h2 className="mx-6 font-accent-secondary text-lg text-primary md:text-2xl">{title}</h2>
-      <div className="flex-1 border-t border-brand-primary"></div>
+      <div className="flex-1"></div>
+      <h2 className="mx-6 text-lg font-thin text-primary md:text-2xl">{title}</h2>
+      <div className="flex-1"></div>
     </div>
   );
 };

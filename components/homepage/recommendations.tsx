@@ -26,7 +26,9 @@ function Reccomendation({ item }: { item: Product; priority?: boolean }) {
         </Link>
       </div>
       <div className="space-y-2 md:space-y-4">
-        <h3 className="border-b border-brand-primary font-accent md:text-lg">{item.title}</h3>
+        <h3 className="pr-4 font-accent underline decoration-brand-primary md:text-lg">
+          {item.title}
+        </h3>
         <p className="text-sm">{item.description}</p>
       </div>
     </div>
@@ -44,7 +46,7 @@ export async function Reccomendations() {
   const [firstProduct, secondProduct, thirdProduct, fourthProduct] = homepageItems;
 
   return (
-    <section className="mx-auto max-w-screen-2xl space-y-12 px-4 pb-4 pt-12 md:pt-24 lg:pt-36">
+    <section className="mx-auto max-w-screen-2xl space-y-6 px-4 md:space-y-12">
       <SectionTitle title="おすすめアイテム" />
       <div className="grid grid-cols-2 gap-6 md:grid-cols-3 md:gap-16 md:px-20 lg:grid-cols-4">
         <Reccomendation item={firstProduct} />
