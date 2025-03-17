@@ -13,11 +13,13 @@ export const metadata = {
 
 export default async function HomePage() {
   return (
-    <div className="flex flex-col gap-12 py-12">
-      <AboutSection />
-      <CollectionsSection />
-      <Reccomendations />
-      <LatestArrival />
+    <div className="flex min-h-screen flex-col">
+      <div className="flex flex-col gap-8 px-4 py-8 md:gap-12 md:px-8 md:py-12">
+        <AboutSection />
+        <CollectionsSection />
+        <Reccomendations />
+        <LatestArrival />
+      </div>
       <Footer />
     </div>
   );

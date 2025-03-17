@@ -50,7 +50,7 @@ export default function AboutSection() {
 
   return (
     <section className="mx-auto max-w-screen-xl px-4 py-8 md:py-16">
-      <div className="grid gap-12 md:grid-cols-2 md:items-center md:gap-36">
+      <div className="lg grid gap-12 md:grid-cols-2 md:items-center md:gap-24 lg:gap-36">
         <div className="relative h-[400px] w-full cursor-pointer" onClick={handleImageSwap}>
           {/* Back image */}
           <motion.div
