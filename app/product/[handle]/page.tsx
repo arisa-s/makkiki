@@ -130,7 +130,7 @@ async function RelatedProducts({ id }: { id: string }) {
                 href={`/product/${product.handle}`}
                 prefetch={true}
               >
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 md:gap-6">
                   <div className="relative aspect-[3/4]">
                     <GridTileImage
                       alt={product.title}
@@ -142,8 +142,11 @@ async function RelatedProducts({ id }: { id: string }) {
                   <div className="flex flex-col gap-1 text-xs">
                     <h3 className="line-clamp-2 font-semibold text-primary">{product.title}</h3>
                     <p className="text-primary">
-                      {product.priceRange.maxVariantPrice.amount}
-                      {product.priceRange.maxVariantPrice.currencyCode}
+                      {`${new Intl.NumberFormat(undefined, {
+                        style: 'currency',
+                        currency: product.priceRange.maxVariantPrice.currencyCode,
+                        currencyDisplay: 'narrowSymbol'
+                      }).format(parseFloat(product.priceRange.maxVariantPrice.amount))}`}
                     </p>
                   </div>
                 </div>
