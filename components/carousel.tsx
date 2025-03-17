@@ -18,9 +18,9 @@ export async function Carousel() {
 
   return (
     <div className="w-full overflow-x-auto pb-6 pt-1">
-      <ul className="flex animate-carousel gap-12">
+      <ul className="flex animate-carousel gap-12 md:gap-24">
         {carouselProducts.map((product, i) => (
-          <li key={`${product.handle}${i}`} className="relative w-40 flex-none md:w-48">
+          <li key={`${product.handle}${i}`} className="relative w-40 flex-none md:w-60">
             <div className="flex flex-col gap-2">
               <div className="relative aspect-[3/4]">
                 <Link href={`/product/${product.handle}`} className="relative h-full w-full">
