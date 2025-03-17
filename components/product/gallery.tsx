@@ -14,7 +14,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
   const previousImageIndex = imageIndex === 0 ? images.length - 1 : imageIndex - 1;
 
   const buttonClassName =
-    'h-full px-6 transition-all ease-in-out hover:scale-110 hover:text-primary flex items-center justify-center';
+    'h-11 px-6 transition-all ease-in-out hover:scale-110 hover:text-primary flex items-center justify-center';
 
   return (
     <form>
@@ -29,9 +29,11 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
             priority={true}
           />
         )}
+      </div>
 
-        {images.length > 1 ? (
-          <div className="absolute bottom-[15%] flex w-full justify-center">
+      {images.length > 1 ? (
+        <div className="mt-4 flex flex-col items-center gap-4">
+          <div className="flex justify-center">
             <div className="bg-primary/20 no-rounded-full mx-auto flex h-11 items-center border border-primary text-primary backdrop-blur">
               <button
                 formAction={() => {
@@ -56,36 +58,34 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
               </button>
             </div>
           </div>
-        ) : null}
-      </div>
 
-      {images.length > 1 ? (
-        <ul className="my-12 flex flex-wrap items-center justify-center gap-2 overflow-auto py-1 lg:mb-0">
-          {images.map((image, index) => {
-            const isActive = index === imageIndex;
+          <ul className="flex flex-wrap items-center justify-center gap-2 overflow-auto py-1 lg:mb-0">
+            {images.map((image, index) => {
+              const isActive = index === imageIndex;
 
-            return (
-              <li key={image.src} className="h-20 w-20">
-                <button
-                  formAction={() => {
-                    const newState = updateImage(index.toString());
-                    updateURL(newState);
-                  }}
-                  aria-label="Select product image"
-                  className="h-full w-full"
-                >
-                  <GridTileImage
-                    alt={image.altText}
-                    src={image.src}
-                    width={80}
-                    height={80}
-                    active={isActive}
-                  />
-                </button>
-              </li>
-            );
-          })}
-        </ul>
+              return (
+                <li key={image.src} className="h-16 w-16">
+                  <button
+                    formAction={() => {
+                      const newState = updateImage(index.toString());
+                      updateURL(newState);
+                    }}
+                    aria-label="Select product image"
+                    className="h-full w-full"
+                  >
+                    <GridTileImage
+                      alt={image.altText}
+                      src={image.src}
+                      width={80}
+                      height={80}
+                      active={isActive}
+                    />
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       ) : null}
     </form>
   );

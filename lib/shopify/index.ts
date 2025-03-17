@@ -403,15 +403,44 @@ export async function getProduct(handle: string): Promise<Product | undefined> {
 }
 
 export async function getProductRecommendations(productId: string): Promise<Product[]> {
-  const res = await shopifyFetch<ShopifyProductRecommendationsOperation>({
-    query: getProductRecommendationsQuery,
+  // First, get the original product to access its tags
+  const productRes = await shopifyFetch<ShopifyProductOperation>({
+    query: getProductQuery,
     tags: [TAGS.products],
     variables: {
-      productId
+      handle: productId
     }
   });
 
-  return reshapeProducts(res.body.data.productRecommendations);
+  const product = productRes.body.data.product;
+  if (!product?.tags?.length) {
+    // If no tags, fall back to regular recommendations
+    const res = await shopifyFetch<ShopifyProductRecommendationsOperation>({
+      query: getProductRecommendationsQuery,
+      tags: [TAGS.products],
+      variables: {
+        productId
+      }
+    });
+    return reshapeProducts(res.body.data.productRecommendations);
+  }
+
+  // Query products with matching tags
+  const tagQuery = product.tags.map((tag) => `tag:'${tag}'`).join(' OR ');
+  const res = await shopifyFetch<ShopifyProductsOperation>({
+    query: getProductsQuery,
+    tags: [TAGS.products],
+    variables: {
+      query: tagQuery,
+      first: 5, // Limit to 5 related products
+      sortKey: 'RELEVANCE'
+    }
+  });
+
+  // Filter out the original product from recommendations
+  return reshapeProducts(removeEdgesAndNodes(res.body.data.products)).filter(
+    (p) => p.id !== productId
+  );
 }
 
 export async function getProducts({

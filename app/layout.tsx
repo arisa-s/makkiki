@@ -47,7 +47,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       lang="en"
       className={`${GeistSans.variable} ${mPlusRounded1c.variable} ${moomin.variable} ${zenKakuGothicAntique.variable} ${passionOne.variable}`}
     >
-      <body className="bg-neutral-50 font-base text-primary selection:bg-teal-300">
+      <body className="bg-neutral-50 pt-24 font-base text-primary selection:bg-teal-300">
         <CartProvider cartPromise={cart}>
           <Navbar />
           <main>

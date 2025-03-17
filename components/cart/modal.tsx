@@ -182,7 +182,7 @@ export default function CartModal() {
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-primary pb-1 pt-1">
                       <p>輸送費</p>
-                      <p className="text-right">Calculated at checkout</p>
+                      <p className="text-right">精算時に計算</p>
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-primary pb-1 pt-1">
                       <p>合計</p>
