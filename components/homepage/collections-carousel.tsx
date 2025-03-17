@@ -125,7 +125,7 @@ export const CollectionsCarousel = ({ collections }: CollectionsCarouselProps) =
         })}
       </Carousel>
       {/* Bottom Row */}
-      <div className="mx-auto mt-8 flex w-full max-w-xl items-center justify-between">
+      <div className="mx-auto mt-4 flex w-full max-w-xl items-center justify-between md:mt-8">
         <button
           onClick={handlePrevious}
           className="border-border-primary bg-surface-primary hover:bg-surface-hover active:bg-surface-hover rounded-full border p-2 transition-colors focus:outline-none"

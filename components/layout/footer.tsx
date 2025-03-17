@@ -16,7 +16,7 @@ export default async function Footer() {
 
   return (
     <footer className="text-accent bg-brand-secondary px-6 text-sm md:px-12">
-      <div className="mx-auto flex w-full max-w-[1512] flex-col gap-6 px-6 py-12 text-sm md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0">
+      <div className="mx-auto flex w-full flex-col gap-6 py-12 text-sm md:max-w-[1512] md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0">
         <div>
           <Link className="flex items-center gap-2 text-primary md:pt-1" href="/">
             <LogoSquare size="sm" />
@@ -37,7 +37,7 @@ export default async function Footer() {
           <FooterMenu menu={menu} />
         </Suspense>
       </div>
-      <div className="border-t border-primary py-6 text-sm">
+      <div className="border-t border-white py-6 text-sm">
         <div className="mx-auto flex w-full max-w-[1512] flex-col items-center gap-1 px-4 md:flex-row md:gap-0 md:px-4 min-[1320px]:px-0">
           <p>
             &copy; {copyrightDate} {copyrightName}
