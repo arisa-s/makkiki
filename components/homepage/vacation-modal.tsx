@@ -45,7 +45,7 @@ export default function VacationModal({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center px-4"
+          className="bg-primary/50 fixed inset-0 z-50 flex items-center justify-center px-4 blur-md backdrop-blur-md"
           onClick={handleClose}
         >
           <motion.div
@@ -70,7 +70,7 @@ export default function VacationModal({
               alt="vacation"
               width={1477}
               height={1108}
-              className="w-full"
+              className="mt-6 w-full"
             />
 
             <div className="mt-6 space-y-4 px-6">
