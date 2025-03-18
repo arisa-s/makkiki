@@ -1,6 +1,7 @@
 'use client';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 interface VacationModalProps {
@@ -64,6 +65,13 @@ export default function VacationModal({
             </div>
 
             <h2 className="mt-8 text-center text-lg font-bold"> 一時発送停止のお知らせ</h2>
+            <Image
+              src="/vacation.JPG"
+              alt="vacation"
+              width={1477}
+              height={1108}
+              className="w-full"
+            />
 
             <div className="mt-6 space-y-4 px-6">
               <p className="text-sm">
