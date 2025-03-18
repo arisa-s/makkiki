@@ -51,7 +51,7 @@ export default function VacationModal({
             initial={{ scale: 0.95, y: 20 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.95, y: 20 }}
-            className="bg-primary/50 w-full max-w-lg rounded-lg border border-black p-6 backdrop-blur-md backdrop-filter"
+            className="w-full max-w-lg rounded-lg border bg-primary p-6"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-end">
