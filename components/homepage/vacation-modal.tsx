@@ -45,14 +45,14 @@ export default function VacationModal({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="bg-primary/50 fixed inset-0 z-50 flex items-center justify-center px-4 blur-md backdrop-blur-md"
+          className="fixed inset-0 z-50 flex items-center justify-center px-4"
           onClick={handleClose}
         >
           <motion.div
             initial={{ scale: 0.95, y: 20 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.95, y: 20 }}
-            className="w-full max-w-lg rounded-lg border bg-primary p-6"
+            className="w-full max-w-lg rounded-lg border bg-primary p-6 blur-md backdrop-blur-md"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-end">
