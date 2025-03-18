@@ -2,6 +2,7 @@
 
 import { Dialog, Transition } from '@headlessui/react';
 import { ShoppingBagIcon } from '@heroicons/react/24/outline';
+import VacationModal from 'components/homepage/vacation-modal';
 import LoadingDots from 'components/loading-dots';
 import Price from 'components/price';
 import { DEFAULT_OPTION } from 'lib/constants';
@@ -193,9 +194,8 @@ export default function CartModal() {
                       />
                     </div>
                   </div>
-                  <form action={redirectToCheckout}>
-                    <CheckoutButton />
-                  </form>
+
+                  <CheckoutButton />
                 </div>
               )}
             </Dialog.Panel>
@@ -208,14 +208,36 @@ export default function CartModal() {
 
 function CheckoutButton() {
   const { pending } = useFormStatus();
+  const onVacation = true;
+  const [showVacationModal, setShowVacationModal] = useState(false);
+
+  if (onVacation) {
+    return (
+      <>
+        <button
+          className="no-rounded-full block w-full bg-component p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
+          onClick={() => setShowVacationModal(true)}
+        >
+          お会計に進む
+        </button>
+        <VacationModal
+          isOpen={showVacationModal}
+          onClose={() => setShowVacationModal(false)}
+          autoShow={false}
+        />
+      </>
+    );
+  }
 
   return (
-    <button
-      className="no-rounded-full block w-full bg-component p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
-      type="submit"
-      disabled={pending}
-    >
-      {pending ? <LoadingDots className="bg-white" /> : 'お会計に進む'}
-    </button>
+    <form action={redirectToCheckout}>
+      <button
+        className="no-rounded-full block w-full bg-component p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
+        type={'submit'}
+        disabled={pending}
+      >
+        {pending ? <LoadingDots className="bg-white" /> : 'お会計に進む'}
+      </button>
+    </form>
   );
 }
