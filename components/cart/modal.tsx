@@ -5,6 +5,7 @@ import { ShoppingBagIcon } from '@heroicons/react/24/outline';
 import VacationModal from 'components/homepage/vacation-modal';
 import LoadingDots from 'components/loading-dots';
 import Price from 'components/price';
+import { useVacation } from 'components/providers/vacation-provider';
 import { DEFAULT_OPTION } from 'lib/constants';
 import { createUrl } from 'lib/utils';
 import Image from 'next/image';
@@ -208,8 +209,8 @@ export default function CartModal() {
 
 function CheckoutButton() {
   const { pending } = useFormStatus();
-  const onVacation = true;
   const [showVacationModal, setShowVacationModal] = useState(false);
+  const { onVacation } = useVacation();
 
   if (onVacation) {
     return (
@@ -233,7 +234,7 @@ function CheckoutButton() {
     <form action={redirectToCheckout}>
       <button
         className="no-rounded-full block w-full bg-component p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
-        type={'submit'}
+        type="submit"
         disabled={pending}
       >
         {pending ? <LoadingDots className="bg-white" /> : 'お会計に進む'}

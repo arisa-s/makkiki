@@ -17,6 +17,7 @@ import {
   getCollectionsQuery
 } from './queries/collection';
 import { getMenuQuery } from './queries/menu';
+import { getVacationStatusQuery } from './queries/metaobject';
 import { getPageQuery, getPagesQuery } from './queries/page';
 import {
   getProductQuery,
@@ -498,4 +499,39 @@ export async function revalidate(req: NextRequest): Promise<NextResponse> {
   }
 
   return NextResponse.json({ status: 200, revalidated: true, now: Date.now() });
+}
+
+type VacationStatus = {
+  vacationEnabled: boolean;
+  description?: string;
+};
+
+export async function getVacationStatus(): Promise<VacationStatus> {
+  try {
+    const res = await shopifyFetch<{
+      data: {
+        metaobject: {
+          fields: Array<{
+            key: string;
+            value: string;
+          }>;
+        };
+      };
+    }>({
+      query: getVacationStatusQuery,
+      cache: 'no-store'
+    });
+
+    const fields = res.body.data.metaobject.fields;
+    const enabled = fields.find(field => field.key === 'enabled')?.value === 'true';
+    const description = fields.find(field => field.key === 'description')?.value;
+
+    return {
+      vacationEnabled: enabled,
+      description
+    };
+  } catch (error) {
+    console.error('Error fetching password protection status:', error);
+    return { vacationEnabled: false, description: '' };
+  }
 }

@@ -1,8 +1,9 @@
 import { CartProvider } from 'components/cart/cart-context';
 import { Navbar } from 'components/layout/navbar';
+import { VacationProvider } from 'components/providers/vacation-provider';
 import { WelcomeToast } from 'components/welcome-toast';
 import { GeistSans } from 'geist/font/sans';
-import { getCart } from 'lib/shopify';
+import { getCart, getVacationStatus } from 'lib/shopify';
 import { ensureStartsWith } from 'lib/utils';
 import { cookies } from 'next/headers';
 import { moomin, mPlusRounded1c, passionOne, zenKakuGothicAntique } from 'public/fonts';
@@ -38,8 +39,8 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
+  const { vacationEnabled, description } = await getVacationStatus();
   const cartId = (await cookies()).get('cartId')?.value;
-  // Don't await the fetch, pass the Promise to the context provider
   const cart = getCart(cartId);
 
   return (
@@ -48,14 +49,22 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       className={`${GeistSans.variable} ${mPlusRounded1c.variable} ${moomin.variable} ${zenKakuGothicAntique.variable} ${passionOne.variable}`}
     >
       <body className="bg-neutral-50 pt-24 font-base text-primary selection:bg-teal-300">
-        <CartProvider cartPromise={cart}>
-          <Navbar />
-          <main>
-            {children}
-            <Toaster closeButton />
-            <WelcomeToast />
-          </main>
-        </CartProvider>
+        <VacationProvider 
+          initialState={{
+            onVacation: vacationEnabled,
+            description,
+            loading: vacationEnabled !== undefined
+          }}
+        >
+          <CartProvider cartPromise={cart}>
+            <Navbar />
+            <main>
+              {children}
+              <Toaster closeButton />
+              <WelcomeToast />
+            </main>
+          </CartProvider>
+        </VacationProvider>
       </body>
     </html>
   );
