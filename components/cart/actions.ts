@@ -100,6 +100,7 @@ export async function redirectToCheckout() {
   let cartId = (await cookies()).get('cartId')?.value;
   let cart = await getCart(cartId);
 
+  console.log(cart);
   redirect(cart!.checkoutUrl);
 }
 
