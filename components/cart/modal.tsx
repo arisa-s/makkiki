@@ -187,7 +187,7 @@ export default function CartModal() {
                       <p className="text-right">精算時に計算</p>
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-primary pb-1 pt-1">
-                      <p>合計</p>
+                      <p>小計</p>
                       <Price
                         className="text-right text-base text-primary"
                         amount={cart.cost.totalAmount.amount}
