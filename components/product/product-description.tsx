@@ -15,6 +15,7 @@ export function ProductDescription({ product }: { product: Product }) {
           <Price
             amount={product.priceRange.maxVariantPrice.amount}
             currencyCode={product.priceRange.maxVariantPrice.currencyCode}
+            includeTax
           />
         </div>
 

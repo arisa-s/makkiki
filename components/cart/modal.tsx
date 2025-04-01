@@ -174,26 +174,18 @@ export default function CartModal() {
                       })}
                   </ul>
                   <div className="text-accent py-4 text-sm">
-                    <div className="mb-3 flex items-center justify-between border-b border-primary pb-1">
-                      <p>消費税</p>
+                    <div className="mb-3 flex items-center justify-between border-b border-primary pb-1 pt-1">
+                      <p>小計(税込）</p>
+                      {/* Not using totalAmount because it include shipping fee when user is logged in */}
                       <Price
                         className="text-right text-base text-primary"
-                        amount={cart.cost.totalTaxAmount.amount}
-                        currencyCode={cart.cost.totalTaxAmount.currencyCode}
+                        amount={cart.cost.subtotalAmount.amount}
+                        currencyCode={cart.cost.subtotalAmount.currencyCode}
                       />
                     </div>
-                    <div className="mb-3 flex items-center justify-between border-b border-primary pb-1 pt-1">
-                      <p>輸送費</p>
-                      <p className="text-right">精算時に計算</p>
-                    </div>
-                    <div className="mb-3 flex items-center justify-between border-b border-primary pb-1 pt-1">
-                      <p>小計</p>
-                      <Price
-                        className="text-right text-base text-primary"
-                        amount={cart.cost.totalAmount.amount}
-                        currencyCode={cart.cost.totalAmount.currencyCode}
-                      />
-                    </div>
+                    <p className="w-full text-right text-secondary">
+                      配送料はチェックアウト時に計算されます。
+                    </p>
                   </div>
 
                   <CheckoutButton />
