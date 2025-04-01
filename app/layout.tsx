@@ -1,7 +1,6 @@
 import { CartProvider } from 'components/cart/cart-context';
 import { Navbar } from 'components/layout/navbar';
 import { VacationProvider } from 'components/providers/vacation-provider';
-import { WelcomeToast } from 'components/welcome-toast';
 import { GeistSans } from 'geist/font/sans';
 import { getCart, getVacationStatus } from 'lib/shopify';
 import { ensureStartsWith } from 'lib/utils';
@@ -49,7 +48,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       className={`${GeistSans.variable} ${mPlusRounded1c.variable} ${moomin.variable} ${zenKakuGothicAntique.variable} ${passionOne.variable}`}
     >
       <body className="bg-neutral-50 pt-24 font-base text-primary selection:bg-teal-300">
-        <VacationProvider 
+        <VacationProvider
           initialState={{
             onVacation: vacationEnabled,
             description,
@@ -60,8 +59,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
             <Navbar />
             <main>
               {children}
-              <Toaster closeButton />
-              <WelcomeToast />
+              <Toaster closeButton />s{' '}
             </main>
           </CartProvider>
         </VacationProvider>
