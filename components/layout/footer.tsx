@@ -19,7 +19,7 @@ export default async function Footer() {
       <div className="mx-auto flex w-full flex-col gap-6 py-12 text-sm md:max-w-[1512] md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0">
         <div>
           <Link className="flex items-center gap-2 text-primary md:pt-1" href="/">
-            <LogoSquare size="sm" />
+            <LogoSquare size="sm" color="white" />
           </Link>
         </div>
         <Suspense

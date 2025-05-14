@@ -1,5 +1,6 @@
 'use client';
 
+import LogoText from 'components/logo-text';
 import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -87,8 +88,10 @@ export default function AboutSection() {
           </motion.div>
         </div>
         <div className="space-y-6">
-          <h2 className="text-xl md:text-2xl">
-            ようこそ<span className="text-brand-primary">MAKKiKi</span>へ！
+          <h2 className="flex items-center gap-2 text-xl md:text-2xl">
+            <span>ようこそ </span>
+            <LogoText size={100} />
+            <span>へ！</span>
           </h2>
           <div className="space-y-4 text-sm leading-relaxed md:text-base">
             <p>
