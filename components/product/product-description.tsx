@@ -38,7 +38,7 @@ export function ProductDescription({ product }: { product: Product }) {
         product.description && <p className="text-sm text-gray-700">{product.description}</p>
       )}
 
-      <div className="mt-6 md:mt-12">
+      <div className="mt-12 md:mt-24">
         <AddToCart product={product} />
       </div>
     </>
