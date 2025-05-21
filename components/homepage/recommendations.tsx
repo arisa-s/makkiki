@@ -26,7 +26,7 @@ function Reccomendation({ item }: { item: Product; priority?: boolean }) {
         </Link>
       </div>
       <div className="space-y-2 md:space-y-4">
-        <h3 className="pr-4 font-accent underline decoration-brand-primary md:text-lg">
+        <h3 className="line-clamp-2 pr-4 font-accent underline decoration-brand-primary md:text-lg">
           {item.title}
         </h3>
         <p className="line-clamp-3 text-sm">{item.description}</p>
