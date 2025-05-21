@@ -322,7 +322,7 @@ export async function getCollections(): Promise<Collection[]> {
     {
       handle: '',
       title: 'すべでの商品',
-      description: 'すべでの商品',
+      descriptionHtml: 'すべでの商品',
       seo: {
         title: 'すべでの商品',
         description: 'すべでの商品'
@@ -523,8 +523,8 @@ export async function getVacationStatus(): Promise<VacationStatus> {
     });
 
     const fields = res.body.data.metaobject.fields;
-    const enabled = fields.find(field => field.key === 'enabled')?.value === 'true';
-    const description = fields.find(field => field.key === 'description')?.value;
+    const enabled = fields.find((field) => field.key === 'enabled')?.value === 'true';
+    const description = fields.find((field) => field.key === 'description')?.value;
 
     return {
       vacationEnabled: enabled,
