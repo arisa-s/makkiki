@@ -52,7 +52,10 @@ export default function AboutSection() {
   return (
     <section className="mx-auto max-w-screen-xl px-4 md:py-8">
       <div className="grid gap-12 md:grid-cols-2 md:items-center md:gap-24 lg:gap-36">
-        <div className="relative h-[400px] w-full cursor-pointer" onClick={handleImageSwap}>
+        <div
+          className="relative hidden h-[400px] w-full cursor-pointer md:block"
+          onClick={handleImageSwap}
+        >
           {/* Back image */}
           <motion.div
             className={`absolute h-[360px] w-[80%]`}
