@@ -29,6 +29,9 @@ export async function Carousel() {
                     src={product.featuredImage?.url}
                     fill
                     sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, 40vw"
+                    priority={i < 5}
+                    loading={i < 5 ? 'eager' : 'lazy'}
+                    quality={85}
                   />
                 </Link>
               </div>
