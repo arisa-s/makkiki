@@ -28,7 +28,8 @@ export async function Carousel() {
                   <GridTileImage
                     alt={product.title}
                     src={product.featuredImage?.url}
-                    fill
+                    width={product.featuredImage?.width}
+                    height={product.featuredImage?.height}
                     sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, 40vw"
                     priority={i < 5}
                     loading={i < 5 ? 'eager' : 'lazy'}
