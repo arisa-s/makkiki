@@ -10,7 +10,7 @@ import 'react-multi-carousel/lib/styles.css';
 interface Collection {
   title: string;
   path: string;
-  description: string;
+  descriptionHtml: string;
   image?: {
     url: string;
     altText?: string;
@@ -22,6 +22,12 @@ interface Collection {
 interface CollectionsCarouselProps {
   collections: Collection[];
 }
+
+const stripHtml = (html: string) => {
+  const tmp = document.createElement('DIV');
+  tmp.innerHTML = html;
+  return tmp.textContent || tmp.innerText || '';
+};
 
 export const CollectionsCarousel = ({ collections }: CollectionsCarouselProps) => {
   const responsive = {
@@ -116,7 +122,9 @@ export const CollectionsCarousel = ({ collections }: CollectionsCarouselProps) =
                   )}
                   <div className="relative mx-auto -mt-16 flex w-full flex-col gap-2 border-b border-brand-primary bg-primary p-2 text-sm md:max-w-[240px] lg:max-w-sm lg:px-6 lg:py-4">
                     <h2 className="font-medium">{collection.title}</h2>
-                    <p className="line-clamp-3 text-secondary">{collection.description}</p>
+                    <p className="line-clamp-3 text-secondary">
+                      {stripHtml(collection.descriptionHtml)}
+                    </p>
                   </div>
                 </div>
               </Link>

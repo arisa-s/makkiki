@@ -6,7 +6,7 @@ const collectionFragment = /* GraphQL */ `
   fragment collection on Collection {
     handle
     title
-    description
+    descriptionHtml
     image {
       ...image
     }

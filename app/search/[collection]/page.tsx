@@ -20,7 +20,7 @@ export async function generateMetadata(props: {
   return {
     title: collection.seo?.title || collection.title,
     description:
-      collection.seo?.description || collection.description || `${collection.title} products`
+      collection.seo?.description || collection.descriptionHtml || `${collection.title} products`
   };
 }
 
@@ -42,9 +42,9 @@ export default async function CategoryPage(props: {
   return (
     <section className="space-y-6 p-6 md:space-y-12 md:p-12">
       {collection ? (
-        <div className="space-y-6">
+        <div className="mx-auto max-w-3xl space-y-12">
           <SectionTitle title={collection.title} />
-          <Prose html={collection.description} />
+          <Prose html={collection.descriptionHtml} />
         </div>
       ) : null}
       {products.length === 0 ? (
