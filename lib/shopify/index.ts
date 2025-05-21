@@ -181,6 +181,7 @@ const reshapeProduct = (product: ShopifyProduct, filterHiddenProducts: boolean =
 
   return {
     ...rest,
+    availableForSale: product.availableForSale,
     images: reshapeImages(images, product.title),
     variants: removeEdgesAndNodes(variants)
   };

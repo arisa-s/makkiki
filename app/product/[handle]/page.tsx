@@ -137,6 +137,7 @@ async function RelatedProducts({ id }: { id: string }) {
                       src={product.featuredImage?.url}
                       fill
                       sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, 40vw"
+                      availableForSale={product.availableForSale}
                     />
                   </div>
                   <div className="flex flex-col gap-1 text-xs">

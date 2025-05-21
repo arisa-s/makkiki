@@ -34,6 +34,7 @@ export async function Carousel() {
                     priority={i < 5}
                     loading={i < 5 ? 'eager' : 'lazy'}
                     quality={85}
+                    availableForSale={product.availableForSale}
                   />
                 </Link>
               </div>
