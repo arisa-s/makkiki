@@ -50,8 +50,8 @@ export default function AboutSection() {
   };
 
   return (
-    <section className="mx-auto max-w-screen-xl px-4 py-8">
-      <div className="lg grid gap-12 md:grid-cols-2 md:items-center md:gap-24 lg:gap-36">
+    <section className="mx-auto max-w-screen-xl px-4 md:py-8">
+      <div className="grid gap-12 md:grid-cols-2 md:items-center md:gap-24 lg:gap-36">
         <div className="relative h-[400px] w-full cursor-pointer" onClick={handleImageSwap}>
           {/* Back image */}
           <motion.div
@@ -65,7 +65,7 @@ export default function AboutSection() {
               src={'/about-image-2.JPEG'}
               alt="MAKKiKi store image 2"
               fill
-              className="rounded-lg object-cover shadow-lg"
+              className="rounded-md object-cover"
               sizes="(min-width: 768px) 40vw, 80vw"
             />
           </motion.div>
@@ -81,13 +81,13 @@ export default function AboutSection() {
               src={'/about-image-1.JPEG'}
               alt="MAKKiKi store image 1"
               fill
-              className="rounded-lg object-cover shadow-lg"
+              className="rounded-md object-cover"
               sizes="(min-width: 768px) 40vw, 80vw"
               priority
             />
           </motion.div>
         </div>
-        <div className="space-y-6">
+        <div className="max-w-md space-y-6">
           <h2 className="flex items-center gap-2 text-xl md:text-2xl">
             <span>ようこそ </span>
             <LogoText size={100} />
