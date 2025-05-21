@@ -29,7 +29,7 @@ function Reccomendation({ item }: { item: Product; priority?: boolean }) {
         <h3 className="pr-4 font-accent underline decoration-brand-primary md:text-lg">
           {item.title}
         </h3>
-        <p className="text-sm">{item.description}</p>
+        <p className="line-clamp-3 text-sm">{item.description}</p>
       </div>
     </div>
   );

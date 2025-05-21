@@ -116,7 +116,7 @@ export const CollectionsCarousel = ({ collections }: CollectionsCarouselProps) =
                   )}
                   <div className="relative mx-auto -mt-16 flex w-full flex-col gap-2 border-b border-brand-primary bg-primary p-2 text-sm md:max-w-[240px] lg:max-w-sm lg:px-6 lg:py-4">
                     <h2 className="font-medium">{collection.title}</h2>
-                    <p className="text-secondary">{collection.description}</p>
+                    <p className="line-clamp-3 text-secondary">{collection.description}</p>
                   </div>
                 </div>
               </Link>
