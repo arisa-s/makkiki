@@ -12,8 +12,8 @@ export default function LogoSquare({
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 197.48 196.01"
-        width={80}
-        height={80}
+        width={60}
+        height={60}
         className="text-black"
       >
         <g>

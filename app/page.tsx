@@ -6,7 +6,7 @@ import VacationInfo from 'components/homepage/vacation-info';
 import Footer from 'components/layout/footer';
 
 export const metadata = {
-  description: 'High-performance ecommerce store built with Next.js, Vercel, and Shopify.',
+  description: 'MAKKiKi〜豊かさ〜公式オンラインショップ',
   openGraph: {
     type: 'website'
   }
@@ -15,7 +15,7 @@ export const metadata = {
 export default async function HomePage() {
   return (
     <div className="relative flex min-h-screen flex-col">
-      <VacationInfo/>
+      <VacationInfo />
       <div className="flex flex-col gap-16 px-4 py-16 md:gap-32 md:px-8 md:py-24">
         <AboutSection />
         <CollectionsSection />
