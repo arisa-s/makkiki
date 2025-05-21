@@ -36,7 +36,7 @@ export function GridTileImage({
           />
           {availableForSale === false && (
             <div className="text-pr absolute right-2 top-2 z-20 h-10 w-10 rounded-full border border-brand-primary bg-white/60 backdrop-blur-md">
-              <div className="bg-primary/90 flex h-10 w-10 items-center justify-center rounded-full text-xs font-medium text-secondary">
+              <div className="bg-primary/90 flex h-10 w-10 items-center justify-center rounded-full text-xs font-medium text-primary">
                 売り切れ
               </div>
             </div>
