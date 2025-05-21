@@ -8,7 +8,8 @@ export async function Carousel() {
   const products = await getProducts({
     sortKey: 'CREATED_AT',
     reverse: true,
-    limit: 5
+    limit: 5,
+    cache: 'no-store'
   });
 
   if (!products?.length) return null;

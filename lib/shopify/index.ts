@@ -448,12 +448,14 @@ export async function getProducts({
   query,
   reverse,
   sortKey,
-  limit = 100
+  limit = 100,
+  cache = 'force-cache'
 }: {
   query?: string;
   reverse?: boolean;
   sortKey?: string;
   limit?: number;
+  cache?: RequestCache;
 }): Promise<Product[]> {
   const res = await shopifyFetch<ShopifyProductsOperation>({
     query: getProductsQuery,
@@ -462,8 +464,9 @@ export async function getProducts({
       query,
       reverse,
       sortKey,
-      first: limit // Pass the limit as first
-    }
+      first: limit
+    },
+    cache
   });
 
   return reshapeProducts(removeEdgesAndNodes(res.body.data.products));
